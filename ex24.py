@@ -1,4 +1,5 @@
-def main():
+
+if __name__ == '__main__':
     
     usr_hash = {
         'anna': 'anna@no.com', 
@@ -11,6 +12,3 @@ def main():
         name, mail = data
         print(f'name = {name} mail = {mail}')
         
-    
-
-main()
