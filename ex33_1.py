@@ -7,11 +7,12 @@ def show(title, n=1, *args, **kwargs):
     print('list of args:' + ','.join(map(str, args)))
 
     print('Keyword Arguments:')
-    if 'path' in kwargs:
-        print(f'path={kwargs["path"]}')
-    
-    if 'log' in kwargs:
-        print(f'log={kwargs["log"]}')
+    kw_params = {
+        'path': kwargs.get('path', '/tmp'),
+        'log' : kwargs.get('log', '/var/log/messages') 
+    }
+
+    print(f'{kw_params}')
 
 if __name__ == '__main__':
 #    2. извикване
@@ -25,7 +26,7 @@ if __name__ == '__main__':
 
     app_config = {
         'log':'/var/log/editor.log',
-        'path':'./app',
+        # 'path':'./app',
         'max_mem':4096
     }
     show('Text Editor', 100,9,5,3, **app_config)
