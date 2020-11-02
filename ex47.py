@@ -2,6 +2,7 @@
 
 from functools import wraps
 
+
 def upper_case(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
