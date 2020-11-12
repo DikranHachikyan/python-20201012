@@ -29,12 +29,24 @@ class Rectangle(Point):
     def height(self, height):
         self._height = height
 
+    def __eq__(self,other):
+        if not isinstance(other,Rectangle):
+            return NotImplemented
+        p = super().__eq__(other)
+        return p and self.width == other.width and self.height == other.height 
+
+    def __str__(self):
+        return super().__str__() + f'[{self.width} x {self.height}]'
+
     def draw(self):
         super().draw()
         print(f'draw rectangle:[{self.width} x{self.height}]')
 
 if __name__ == '__main__':
-   r1 = Rectangle(1,2,100,200)
+    r1 = Rectangle(10,20,100,200)
+    r2 = Rectangle(10,20,300,400)
 
-   r1.draw()
-   
+    if r1 == r2:
+        print(f'{r1} = {r2}')
+    else:
+        print(f'{r1} <>{r2}')

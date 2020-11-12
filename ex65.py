@@ -34,7 +34,8 @@ class Rectangle(Point):
         print(f'draw rectangle:[{self.width} x{self.height}]')
 
 if __name__ == '__main__':
-   r1 = Rectangle(1,2,100,200)
+    shapes = [Point(2,3), Rectangle(6,7,100,200), Point(15,20)]
 
-   r1.draw()
-   
+    for s in shapes:
+        s.draw()
+        print('-' * 20)
